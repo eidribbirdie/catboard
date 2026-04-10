@@ -81,7 +81,7 @@
 &kp DELETE  &kp Q         &kp W   &kp F   &kp P      &kp G        &kp DOWN_ARROW   &kp J      &kp L    &kp U      &kp Y    &kp SEMI     &kp BACKSPACE
 &kp CAPS    &kp A         &kp R   &kp S   &kp T      &kp D        &kp LEFT_ARROW   &kp H      &kp N    &kp E      &kp I    &kp O        &kp APOS
 &kp LSHFT   &kp Z         &kp X   &kp C   &kp V      &kp B        &kp RIGHT_ARROW  &kp K      &kp M    &kp COMMA  &kp DOT  &kp FSLH     &kp RIGHT_SHIFT
-&kp C_MUTE  &kp LCTRL     &none   &none   &kp SPACE  &kp LG(L)    &kp ENTER        &kp ENTER  &kp TAB  &mo 2      &none    &kp RA(TAB)
+&kp C_MUTE  &kp LCTRL     &tog 3  &none   &kp SPACE  &kp LG(L)    &kp ENTER        &kp ENTER  &kp TAB  &mo 2      &none    &kp RA(TAB)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -114,13 +114,13 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_3 {
+        Steno {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none     &none     &none     &none       &none  &none         &none     &none     &none     &none     &none
+&none  &none  &kp HASH  &kp HASH  &kp HASH  &kp HASH    &none  &kp HASH      &kp HASH  &kp HASH  &kp HASH  &kp HASH  &kp HASH
+&none  &none  &kp S     &kp T     &kp P     &kp H       &none  &kp ASTRK     &kp F     &kp P     &kp L     &kp T     &kp D
+&none  &none  &kp S     &kp K     &kp W     &kp R       &none  &kp ASTERISK  &kp R     &kp B     &kp G     &kp S     &kp Z
+&none  &none  &none     &none     &kp A     &kp O       &none  &kp E         &kp U     &none     &none     &none
             >;
 
             display-name = "layer3";
