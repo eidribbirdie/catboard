@@ -77,11 +77,11 @@
 
         Colemak {
             bindings = <
-&tog 1      &kp NUMBER_1  &kp N2  &kp N3  &kp N4     &kp N5       &kp UP_ARROW     &kp N6     &kp N7   &kp N8     &kp N9   &kp N0       &kp MINUS
-&kp DELETE  &kp Q         &kp W   &kp F   &kp P      &kp G        &kp DOWN_ARROW   &kp J      &kp L    &kp U      &kp Y    &kp SEMI     &kp BACKSPACE
-&kp CAPS    &kp A         &kp R   &kp S   &kp T      &kp D        &kp LEFT_ARROW   &kp H      &kp N    &kp E      &kp I    &kp O        &kp APOS
-&kp LSHFT   &kp Z         &kp X   &kp C   &kp V      &kp B        &kp RIGHT_ARROW  &kp K      &kp M    &kp COMMA  &kp DOT  &kp FSLH     &kp RIGHT_SHIFT
-&kp C_MUTE  &kp LCTRL     &tog 3  &none   &kp SPACE  &kp LG(L)    &kp ENTER        &kp ENTER  &kp TAB  &mo 2      &kp INS  &kp RA(TAB)
+&kp F1      &kp F2  &kp F3        &kp F4     &kp F5  &kp F6       &kp UP_ARROW     &kp F7     &kp F8  &kp F9     &kp F10        &kp F11   &kp F12
+&kp DELETE  &kp Q   &kp W         &kp F      &kp P   &kp G        &kp DOWN_ARROW   &kp J      &kp L   &kp U      &kp Y          &kp SEMI  &kp BACKSPACE
+&kp CAPS    &kp A   &kp R         &kp S      &kp T   &kp D        &kp LEFT_ARROW   &kp H      &kp N   &kp E      &kp I          &kp O     &kp APOS
+&kp LSHFT   &kp Z   &kp X         &kp C      &kp V   &kp B        &kp RIGHT_ARROW  &kp K      &kp M   &kp COMMA  &kp DOT        &kp FSLH  &kp RIGHT_SHIFT
+&kp C_MUTE  &none   &kp LEFT_ALT  &kp LCTRL  &to 1   &kp SPACE    &kp LG(L)        &kp ENTER  &to 2   &kp RCTRL  &kp RIGHT_ALT  &kp INS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -90,11 +90,11 @@
 
         Number {
             bindings = <
-&trans                            &none            &mkp LCLK         &mkp MCLK          &mkp RCLK        &none              &mmv MOVE_UP     &kp GRAVE  &kp TILDE  &none   &kp SLASH  &none      &kp INS
-&none                             &none            &none             &none              &none            &none              &mmv MOVE_DOWN   &kp N7     &kp N8     &kp N9  &kp ASTRK  &none      &none
-&none                             &rgb_ug RGB_SPI  &rgb_ug RGB_SPD   &none              &none            &none              &mmv MOVE_LEFT   &kp N4     &kp N5     &kp N6  &kp MINUS  &none      &none
-&rgb_ug RGB_COLOR_HSB(222,93,28)  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR   &none              &rgb_ug RGB_BRI  &rgb_ug RGB_BRD    &mmv MOVE_RIGHT  &kp N1     &kp N2     &kp N3  &kp PLUS   &none      &rgb_ug RGB_TOG
-&kp C_MUTE                        &none            &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans           &none              &mkp LCLK        &trans     &trans     &kp N0  &kp DOT    &kp EQUAL
+&none       &none  &none                 &none   &none                  &none       &trans  &none   &none   &none   &none         &none     &none
+&none       &none  &kp LEFT_BRACE        &none   &kp RIGHT_BRACE        &kp PIPE    &trans  &kp N7  &kp N8  &kp N9  &kp SLASH     &none     &none
+&none       &none  &kp LEFT_PARENTHESIS  &none   &kp RIGHT_PARENTHESIS  &none       &trans  &kp N4  &kp N5  &kp N6  &kp ASTERISK  &none     &none
+&none       &none  &kp LEFT_BRACKET      &none   &kp RIGHT_BRACKET      &none       &trans  &kp N1  &kp N2  &kp N3  &kp MINUS     &none     &none
+&kp C_MUTE  &none  &trans                &trans  &to 0                  &trans      &trans  &trans  &to 2   &kp N0  &kp DOT       &kp PLUS
             >;
 
             display-name = "Number";
@@ -103,15 +103,15 @@
 
         BT {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &none        &none  &none  &none       &none      &none
-&none  &bt BT_CLR    &bt BT_CLR_ALL  &none         &none         &none           &mmv MOVE_DOWN   &none        &none  &none  &none       &none      &none
-&none  &none         &sys_reset      &none         &none         &none           &mmv MOVE_LEFT   &none        &none  &none  &sys_reset  &soft_off  &none
-&none  &none         &none           &none         &none         &bootloader     &mmv MOVE_RIGHT  &bootloader  &none  &none  &none       &none      &none
-&none  &none         &none           &none         &none         &trans          &mkp LCLK        &none        &none  &none  &none       &none
+&rgb_ug RGB_ON   &rgb_ug RGB_OFF  &none  &none  &none  &none          &none  &none       &none  &none  &none  &bt BT_PRV      &bt BT_NXT
+&rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &none  &none  &none  &none          &none  &none       &none  &none  &none  &none           &none
+&rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none  &none  &none  &none          &none  &none       &none  &none  &none  &soft_off       &none
+&rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &none  &none  &none  &bootloader    &none  &sys_reset  &none  &none  &none  &bt BT_CLR_ALL  &bt BT_CLR
+&none            &none            &none  &none  &to 0  &none          &none  &none       &to 1  &none  &none  &none
             >;
 
             display-name = "reset";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
         };
 
         Steno {
