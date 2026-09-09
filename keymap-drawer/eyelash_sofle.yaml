@@ -1,17 +1,17 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
   Colemak:
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
-  - F6
+  - {t: '1', h: F1}
+  - {t: '2', h: F2}
+  - {t: '3', h: F3}
+  - {t: '4', h: F4}
+  - {t: '5', h: F5, s: '%'}
+  - {t: '6', h: F6}
   - $$mdi:arrow-up-bold$$
-  - F7
-  - F8
-  - F9
-  - F10
+  - {t: '7', h: F7, s: '&'}
+  - {t: '8', h: F8, s: '*'}
+  - {t: '9', h: F9, s: (}
+  - {t: '0', h: F10}
   - F11
   - F12
   - $$mdi:backspace-reverse-outline$$
@@ -27,7 +27,7 @@ layers:
   - Y
   - {t: ;, s: ':'}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:apple-keyboard-caps$$
+  - $$mdi:keyboard-tab$$
   - A
   - R
   - S
@@ -54,14 +54,14 @@ layers:
   - {t: /, s: '?'}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:volume-off$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
-  - $$mdi:keyboard-space$$
   - {t: Number, h: toggle}
+  - $$mdi:keyboard-space$$
   - Gui+L
-  - {t: BT-RGB, h: toggle}
   - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: BT-RGB, h: toggle}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - INS
@@ -79,7 +79,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '{'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -91,7 +91,7 @@ layers:
   - {t: '9', s: (}
   - {t: /, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - (
@@ -122,11 +122,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: Colemak, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: BT-RGB, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: BT-RGB, h: toggle}
   - {t: '0', s: )}
   - {t: ., s: '>'}
   - +
@@ -187,11 +187,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: Colemak, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Number, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Number, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
