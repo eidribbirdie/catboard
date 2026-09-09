@@ -85,11 +85,11 @@
 
         Colemak {
             bindings = <
-&kp F1      &kp F2  &kp F3        &kp F4     &kp F5  &kp F6       &kp UP_ARROW     &kp F7     &kp F8  &kp F9     &kp F10        &kp F11   &kp F12
-&kp DELETE  &kp Q   &kp W         &kp F      &kp P   &kp G        &kp DOWN_ARROW   &kp J      &kp L   &kp U      &kp Y          &kp SEMI  &kp BACKSPACE
-&kp CAPS    &kp A   &kp R         &kp S      &kp T   &kp D        &kp LEFT_ARROW   &kp H      &kp N   &kp E      &kp I          &kp O     &kp APOS
-&kp LSHFT   &kp Z   &kp X         &kp C      &kp V   &kp B        &kp RIGHT_ARROW  &kp K      &kp M   &kp COMMA  &kp DOT        &kp FSLH  &kp RIGHT_SHIFT
-&kp C_MUTE  &none   &kp LEFT_ALT  &kp LCTRL  &kp SPACE   &to 1   &kp LG(L)         &to 2  &kp ENTER    &kp RCTRL  &kp RIGHT_ALT  &kp INS
+&mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 N5  &mt F6 NUMBER_6    &kp UP_ARROW     &mt F7 N7  &mt F8 N8  &mt F9 N9  &mt F10 NUMBER_0  &kp F11   &kp F12
+&kp DELETE       &kp Q            &kp W            &kp F            &kp P      &kp G              &kp DOWN_ARROW   &kp J      &kp L      &kp U      &kp Y             &kp SEMI  &kp BACKSPACE
+&kp TAB          &kp A            &kp R            &kp S            &kp T      &kp D              &kp LEFT_ARROW   &kp H      &kp N      &kp E      &kp I             &kp O     &kp APOS
+&kp LSHFT        &kp Z            &kp X            &kp C            &kp V      &kp B              &kp RIGHT_ARROW  &kp K      &kp M      &kp COMMA  &kp DOT           &kp FSLH  &kp RIGHT_SHIFT
+&kp C_MUTE       &kp CAPS         &kp LEFT_ALT     &kp LCTRL        &to 1      &kp SPACE          &kp LG(L)        &kp ENTER  &to 2      &kp RCTRL  &kp RIGHT_ALT     &kp INS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -99,12 +99,11 @@
         Number {
             bindings = <
 &none       &none  &none                 &none   &none                  &none       &trans  &none   &none   &none   &none         &none     &none
-&trans       &none  &kp LEFT_BRACE        &none   &kp RIGHT_BRACE        &kp PIPE    &trans  &kp N7  &kp N8  &kp N9  &kp SLASH     &none     &trans
+&none       &none  &kp LEFT_BRACE        &none   &kp RIGHT_BRACE        &kp PIPE    &trans  &kp N7  &kp N8  &kp N9  &kp SLASH     &none     &none
 &none       &none  &kp LEFT_PARENTHESIS  &none   &kp RIGHT_PARENTHESIS  &none       &trans  &kp N4  &kp N5  &kp N6  &kp ASTERISK  &none     &none
 &none       &none  &kp LEFT_BRACKET      &none   &kp RIGHT_BRACKET      &none       &trans  &kp N1  &kp N2  &kp N3  &kp MINUS     &none     &none
-&kp C_MUTE  &none  &trans                &trans  &trans  &to 0                  &trans  &to 2  &trans  &kp N0  &kp DOT       &kp PLUS
+&kp C_MUTE  &none  &trans                &trans  &to 0                  &trans      &trans  &trans  &to 2   &kp N0  &kp DOT       &kp PLUS
             >;
-
             display-name = "Number";
             sensor-bindings = <&scroll_encoder>;
         };
@@ -115,7 +114,7 @@
 &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &none  &none  &none  &none          &none  &none       &none  &none  &none  &none           &none
 &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none  &none  &none  &none          &none  &none       &none  &none  &none  &soft_off       &none
 &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &none  &none  &none  &bootloader    &none  &sys_reset  &none  &none  &none  &bt BT_CLR_ALL  &bt BT_CLR
-&none            &none            &none  &none  &none  &to 0          &none  &to 1       &none  &none  &none  &none
+&none            &none            &none  &none  &to 0  &none          &none  &none       &to 1  &none  &none  &none
             >;
 
 display-name = "BT-RGB";
