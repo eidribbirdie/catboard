@@ -121,6 +121,5 @@
 display-name = "BT-RGB";
             sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
         };
-        };
-
     };
+};
