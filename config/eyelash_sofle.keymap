@@ -1,75 +1,62 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
+#include <dt-bindings/zmk/mouse.h>
 #include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+/*
 
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
+   &mmv_input_listener {
+       input-processors = <&zip_xy_scaler 2 1>;
+   };
 
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
-};
+   &msc_input_listener {
+       input-processors = <&zip_xy_scaler 2 1>;
+   };
 
-&mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
-};
+ */
 
-&soft_off { hold-time-ms = <2000>; };
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
 / {
+    behaviors {
+        mmv {
+            acceleration-exponent = <1>;      // 1
+            time-to-max-speed-ms = <900>;    // 40
+            delay-ms = <0>;                   // 0
+        };
+
+        msc {
+            acceleration-exponent = <1>;      // 0
+            time-to-max-speed-ms = <400>;      // 500
+            delay-ms = <0>;                   //   10
+        };
+    };
+
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-        tap-ms = <100>;
+        tap-ms = <30>;
     };
 
-    behaviors {
-    };
+    SandS: SandS {
+        compatible = "zmk,behavior-hold-tap";
+        label = "SANDS";
+        bindings = <&kp>, <&kp>;
 
-    combos {
-        compatible = "zmk,combos";
-
-        softoff {
-            bindings = <&soft_off>;
-            key-positions = <14 28 40>;
-        };
-    };
-
-    macros {
-        SHIFT_MCLK: SHIFT_MCLK {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp CAPS>,
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT &mkp MB3>;
-
-            label = "SHIFT_MCLK";
-        };
-
-        cap_shft: cap_shft {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "CAP_SHFT";
-        };
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "hold-preferred";
+        retro-tap;
     };
 
     keymap {
@@ -86,7 +73,7 @@
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             display-name = "catboard";
-        };
+ };
 
         Number {
             bindings = <
@@ -110,34 +97,10 @@
 &none            &none            &none  &none  &to 0  &none          &none  &none       &to 1  &none  &none  &none
             >;
 
-            display-name = "reset";
+display-name = "reset";
             sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
         };
-
-        Steno {
-            bindings = <
-&tog 0  &none  &none     &none     &none     &none       &none  &none         &none     &none     &none     &none     &none
-&none   &none  &kp HASH  &kp HASH  &kp HASH  &kp HASH    &none  &kp HASH      &kp HASH  &kp HASH  &kp HASH  &kp HASH  &kp HASH
-&none   &none  &kp S     &kp T     &kp P     &kp H       &none  &kp ASTRK     &kp F     &kp P     &kp L     &kp T     &kp D
-&none   &none  &kp S     &kp K     &kp W     &kp R       &none  &kp ASTERISK  &kp R     &kp B     &kp G     &kp S     &kp Z
-&none   &none  &none     &none     &kp A     &kp O       &none  &kp E         &kp U     &none     &none     &none
-            >;
-
-            display-name = "Steno";
-            sensor-bindings = <&inc_dec_kp PAGE_UP PG_DN>;
         };
 
-        layer_4 {
-            bindings = <
-&kp INS    &kp N1     &kp N2    &kp N3    &kp N4     &kp N5    &kp UP     &kp N6   &kp N7   &kp N8     &kp N9    &kp N0     &kp MINUS
-&none      &kp Q      &kp W     &kp E     &kp R      &kp T     &kp DOWN   &kp Y    &kp U    &kp I      &kp O     &kp P      &kp BSPC
-&kp CAPS   &kp A      &kp S     &kp D     &kp F      &kp G     &kp LEFT   &kp H    &kp J    &kp K      &kp L     &kp SEMI   &kp SQT
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B     &kp RIGHT  &kp N    &kp M    &kp COMMA  &kp DOT   &kp FSLH   &kp RSHFT
-&trans     &kp LCTRL  &kp LALT  &kp LGUI  &kp SPACE  &trans    &kp RET    &kp RET  &kp TAB  &trans     &kp RALT  &kp RCTRL
-            >;
-
-            display-name = "layer4";
-            sensor-bindings = <&scroll_encoder>;
-        };
     };
 };
