@@ -16,8 +16,8 @@ manifest:
       url: https://github.com/a741725193/zmk-sofle
       revision: main
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
   self:
     path: boards
