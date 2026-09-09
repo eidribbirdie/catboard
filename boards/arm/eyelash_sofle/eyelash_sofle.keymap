@@ -97,7 +97,7 @@
 &none            &none            &none  &none  &to 0  &none          &none  &none       &to 1  &none  &none  &none
             >;
 
-display-name = "reset";
+display-name = "BT-RGB";
             sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
         };
         };
