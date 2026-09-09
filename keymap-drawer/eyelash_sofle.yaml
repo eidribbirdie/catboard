@@ -61,7 +61,7 @@ layers:
   - $$mdi:keyboard-space$$
   - Gui+L
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: reset, h: toggle}
+  - {t: BT-RGB, h: toggle}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
   - INS
@@ -126,11 +126,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: reset, h: toggle}
+  - {t: BT-RGB, h: toggle}
   - {t: '0', s: )}
   - {t: ., s: '>'}
   - +
-  reset:
+  BT-RGB:
   - RGB ON
   - RGB OFF
   - {t: '$$mdi:minus-circle-outline$$', type: none}
